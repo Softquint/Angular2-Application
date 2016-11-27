@@ -1,0 +1,25 @@
+<div class="container">
+	<h1>Regular Saver</h1>
+	<p>{{name}}</p>
+
+	<ul class="list-group">
+		<li #currentitem class="list-group-item" *ngFor="#item of LangList">
+			<h3 class="text-info">{{item.title}}</h3>
+			<p>{{item.description}}</p>
+			<div class="btn-group" role="group" aria-label="...">
+			  <button type="button" class="btn btn-default"
+			  	(click)="viewItem(currentitem , item)">
+			  	<i class="glyphicon glyphicon-eye-open text-info"></i>
+			  </button>
+			  <button type="button" class="btn btn-default"
+			  	(click)="editItem($event , item)">
+			  	<i class="glyphicon glyphicon-pencil text-warning"></i>
+			  </button>
+			  <button type="button" class="btn btn-default"
+			  	(click)="deleteItem($event , item)">
+			  	<i class="glyphicon glyphicon-trash text-danger"></i>
+			  </button>
+			</div>
+		</li>
+	</ul>
+</div>
